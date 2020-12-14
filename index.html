@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact form</title>
+    <style>
+        #maincontainer{
+            position: absolute;
+            border: 15px solid rgb(4, 54, 119);
+            width: 510px;
+            height: 420px;
+            left: 30%;
+            top: 10%;
+        }
+        #text{
+            position: absolute;
+            left: 16% ;
+            top: 25%;
+            font-size: 25px;
+        }
+        #mail{
+            position: absolute;
+            left: 16% ;
+            top: 40%;
+            font-size: 25px;
+        }
+        #mes{
+            position: absolute;
+            left: 16% ;
+            top: 55%;
+            font-size: 25px;
+        }
+        #name{
+            position: absolute;
+            left: 120%;
+            top: 3%;
+            height: 20px;
+        }
+        #name{
+            position: absolute;
+            left: 120%;
+            top: 3%;
+            height: 20px;
+        }
+        #name{
+            position: absolute;
+            left: 120%;
+            top: 3%;
+            height: 20px;
+        }
+        #send{
+            position: absolute;
+            left: 10%;
+            top: 70%;
+            width: 150px;
+            font-size: 20px;
+            height: 65px;
+            border-radius: 20px;
+            border: 4px solid black;
+            cursor: pointer;
+        }
+        #send:hover{
+            background-color: rgb(8, 85, 75);
+            color: white;
+        }
+        #reset:hover{
+            background-color: rgb(8, 85, 75);
+            color: white;
+        }
+        #reset{
+            cursor: pointer;
+            position: absolute;
+            border: 4px solid black;
+            left: 50%;
+            width: 150px;
+            top: 70%;
+            font-size: 20px;
+            height: 65px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div id="maincontainer">
+            <h1 style="position: absolute; left: 30%;">Contact Me</h1>
+            <span id="text"> Name : <input type="text" placeholder="Name" id="name"></span>
+            <span id="mail"> Email : <input type="text" placeholder="Name" id="email"></span>
+            <span id="mes"> Message : <input type="text" placeholder="Name" id="message"></span>
+            <button type="button" onclick="send()" id="send">Send</button><button type="button" onclick="reset()" id="reset">Reset</button>
+        </div>
+    </div>
+</body>
+<script>
+    function  send(){
+        let name  = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let message = document.getElementById("message").value;
+
+        localStorage.setItem("Name" , name);
+        localStorage.setItem("Email" , email);
+        localStorage.setItem("Message" , message);
+    }
+    function reset(){
+        let name  = document.getElementById("name");
+        let email = document.getElementById("email");
+        let message = document.getElementById("message");
+
+        name.value = "";
+        email.value = "";
+        message.value = "";
+    }
+    window.onload = function(){
+        alert("Right click on the screen and click on inspect , then go to the application on top  , there click on the local storage ( the document) , there after entering snd clickking the button - 'send'  , you should be able to see it over there ")
+    }
+</script>
+</html>
